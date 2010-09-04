@@ -34,8 +34,18 @@
   addScript("../../lib/underscore/underscore.js");
   addScript("../../lib/jquery/jquery-1.4.2.js");
   addScript("Runner.js");
+  addScript("Future.js");
+  addScript("Matcher.js");
   addScript("../Angular.js");
+  addScript("../jqLite.js");
   addScript("../JSON.js");
+  addScript("../Scope.js");
+  addScript("../Parser.js");
+  addScript("../Resource.js");
+  addScript("../Browser.js");
+  addScript("../apis.js");
+  addScript("../services.js");
+  addScript("../AngularPublic.js");
   addScript("DSL.js");
   document.write('<script type="text/javascript">' +
     '$scenarioRunner = new angular.scenario.Runner(window, jQuery);' +

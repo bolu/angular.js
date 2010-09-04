@@ -74,8 +74,8 @@ describe('equals', function(){
     expect(equals(['misko'], ['misko', 'adam'])).toEqual(false);
   });
 
-  it('should ignore $ member variables', function(){
-    expect(equals({name:'misko', $id:1}, {name:'misko', $id:2})).toEqual(true);
+  it('should ignore $ member variables, and functions', function(){
+    expect(equals({name:'misko', $id:1}, {name:'misko', $id:2, noop:noop})).toEqual(true);
     expect(equals({name:'misko'}, {name:'misko', $id:2})).toEqual(true);
     expect(equals({name:'misko', $id:1}, {name:'misko'})).toEqual(true);
   });

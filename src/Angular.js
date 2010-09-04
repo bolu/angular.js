@@ -248,11 +248,15 @@ function equals(o1, o2) {
     } else {
       keySet = {};
       for(key in o1) {
-        if (key.charAt(0) !== '$' && !equals(o1[key], o2[key])) return false;
-        keySet[key] = true;
+        if (typeof o1[key] !== 'function') {
+          if (key.charAt(0) !== '$' && !equals(o1[key], o2[key])) return false;
+          keySet[key] = true;
+        }
       }
       for(key in o2) {
-        if (key.charAt(0) !== '$' && keySet[key] !== true) return false;
+        if (typeof o2[key] !== 'function') {
+          if (key.charAt(0) !== '$' && keySet[key] !== true) return false;
+        }
       }
       return true;
     }

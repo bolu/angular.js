@@ -22,7 +22,19 @@ beforeEach(function(){
         return "Expected to not have class 'ng-validation-error' but found.";
       };
       return !hasClass;
+    },
+
+    toEqualData: function(expected) {
+      return equals(this.actual, expected);
+    },
+
+    toHaveClass: function(clazz) {
+      this.message = function(){
+        return "Expected '" + sortedHtml(this.actual) + "' to have class '" + clazz + "'.";
+      };
+      return jqLite(this.actual).hasClass(clazz);
     }
+
   });
 });
 
